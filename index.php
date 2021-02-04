@@ -17,66 +17,66 @@
   <div class="row">
     <div class="col-md-3"></div>
       <div class="col-md-6">        
-        <form id="submitForm">
+        <form id="submitForm" method="post" action="">
       
         <div class="form-group">
             <label for="name">الإسم التجاري:</label>
-            <input type="text" class="form-control" name="trade_name" placeholder="أدخل الإسم التجاري" required="">
+            <input type="text" class="form-control" name="trade_name" placeholder="أدخل الإسم التجاري" >
           </div>
         <div class="form-group">
             <label for="name">الإسم الأول</label>
-            <input type="text" class="form-control" name="first_name" placeholder="الإسم الأول" required="">
+            <input type="text" class="form-control" name="first_name" placeholder="الإسم الأول" >
           </div>
           <div class="form-group">  
             <label for="mobile">إسم العائلة</label>
-            <input type="text" class="form-control" name="last_name" placeholder="إسم العائلة" required="">
+            <input type="text" class="form-control" name="last_name" placeholder="إسم العائلة" >
           </div>
           <div class="form-group">  
             <label for="nmail">البريد الإلكتروني</label>
-            <input type="text" class="form-control" name="email" placeholder="ادخل البريد الإلكتروني" required="">
+            <input type="text" class="form-control" name="email" placeholder="ادخل البريد الإلكتروني" >
           </div>
           <div class="form-group">  
             <label for="nmail">كلمة المرور</label>
-            <input type="text" class="form-control" name="password" placeholder="كلمة المرور" required="">
+            <input type="text" class="form-control" name="password" placeholder="كلمة المرور" >
           </div>
           <div class="form-group">  
             <label for="nmail">رقم الهاتف</label>
-            <input type="text" class="form-control" name="phone" placeholder="أدخل رقم الهاتف" required="">
+            <input type="text" class="form-control" name="phone" placeholder="أدخل رقم الهاتف" >
           </div>
           <div class="form-group">  
             <label for="nmail">العنوان</label>
-            <input type="text" class="form-control" name="address" placeholder="أدخل العنوان" required="">
+            <input type="text" class="form-control" name="address" placeholder="أدخل العنوان" >
           </div>
           <div class="form-group">
             <p>Already have account ?<a href="login.php"> Login</a></p>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button type="submit"  name="submit" class="btn btn-primary">Sign Up</button>
           </div>
         </form>
       </div>
   </div>
 </div>
 
-<!--<script type="text/javascript">
-  $(document).ready(function(){
-    $("#submitForm").on("submit", function(e){
-      e.preventDefault();
-      var formData = $(this).serialize();
-      $.ajax({
-        url  : "signup.php",
-        type : "POST",
-        cache:false,
-        data : formData,
-        success:function(result){
-          if (result == "yes") {
-            alert("Registration sucessfully Please login");
-            window.location ='login.php';          
-          }else{
-            alert("Registration failed try again!");
-          }          
-        }
-      });  
-    });    
-  });
-</script>-->
+<?php
+
+include_once 'Include/dbconfig.php';
+include_once 'code.php';
+
+$DataBase=new Database();
+$DB=$DataBase->getConnection();
+
+$op=new Code($DB);
+$d=getdate();
+$updatedate= $createdate=$d['mday'] .'-'.  $d['mon'] .'-'. $d['year'] ;//.' ## '. $d['hours'] .':'. $d['minutes'] .':'. $d['seconds'];
+
+
+
+if(isset($_POST["submit"])){
+  $op->registerUser($_POST["trade_name"],$_POST["first_name"],$_POST["last_name"],$_POST["email"],$_POST["password"],$_POST["phone"],$_POST["address"],$createdate,$updatedate);
+}
+
+
+
+?>
+
 </body>
 </html>
