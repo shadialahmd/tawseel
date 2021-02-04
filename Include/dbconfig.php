@@ -1,6 +1,6 @@
 <?php
 
-include_once 'code.php';
+
 class Database{
 
 
@@ -21,21 +21,12 @@ class Database{
 
         }
         
-      //  echo 'ok';
+      
         return $conn;
     }
 
 }
 
-$email="ss@ss.com";
-$pass="123";
-
-$batabase=new Database();
-$db=$batabase->getConnection();
-
-//$user=new Users($db);
-
-//print_r($user->checkUserInfo($email,$pass));
 
 
 ?>
