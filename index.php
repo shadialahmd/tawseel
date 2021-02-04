@@ -10,7 +10,7 @@
 <body>
 
 <div class="card text-center" style="padding:20px;">
-  <h3>Registration & Login with Email OTP verification using Jquery AJAX with PHP Mysql</h3>
+  <h3>Create</h3>
 </div><br>
 
 <div class="container">
@@ -18,17 +18,34 @@
     <div class="col-md-3"></div>
       <div class="col-md-6">        
         <form id="submitForm">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" name="name" placeholder="Enter Name" required="">
+      
+        <div class="form-group">
+            <label for="name">الإسم التجاري:</label>
+            <input type="text" class="form-control" name="trade_name" placeholder="أدخل الإسم التجاري" required="">
+          </div>
+        <div class="form-group">
+            <label for="name">الإسم الأول</label>
+            <input type="text" class="form-control" name="first_name" placeholder="الإسم الأول" required="">
           </div>
           <div class="form-group">  
-            <label for="mobile">Mobile Number:</label>
-            <input type="text" class="form-control" name="mobile" placeholder="Enter Mobile number" required="">
+            <label for="mobile">إسم العائلة</label>
+            <input type="text" class="form-control" name="last_name" placeholder="إسم العائلة" required="">
           </div>
           <div class="form-group">  
-            <label for="nmail">Email:</label>
-            <input type="text" class="form-control" name="email" placeholder="Enter Email" required="">
+            <label for="nmail">البريد الإلكتروني</label>
+            <input type="text" class="form-control" name="email" placeholder="ادخل البريد الإلكتروني" required="">
+          </div>
+          <div class="form-group">  
+            <label for="nmail">كلمة المرور</label>
+            <input type="text" class="form-control" name="password" placeholder="كلمة المرور" required="">
+          </div>
+          <div class="form-group">  
+            <label for="nmail">رقم الهاتف</label>
+            <input type="text" class="form-control" name="phone" placeholder="أدخل رقم الهاتف" required="">
+          </div>
+          <div class="form-group">  
+            <label for="nmail">العنوان</label>
+            <input type="text" class="form-control" name="address" placeholder="أدخل العنوان" required="">
           </div>
           <div class="form-group">
             <p>Already have account ?<a href="login.php"> Login</a></p>
