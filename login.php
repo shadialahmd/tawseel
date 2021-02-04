@@ -102,22 +102,27 @@
 </script>-->
 <?php
 
-include_once 'code.php';
+include_once 'Include/dbconfig.php';
 
-include_once 'dbconfig.php';
+include_once 'code.php';
+$DataBase=new Database();
+$DB=$DataBase->getConnection();
+
+$op=new Code($DB);
+
 
 if(isset($_POST["submit"])){
 
-    $batabase=new Database();
-    $db=$batabase->getConnection();
-    
-    $user = new Users($db);
+   $ss=$op->login($_POST["email"],$_POST["pass"]);
 
-    $data=$user->checkUserInfo($_POST["email"],$_POST["pass"]);
+   print_r($ss);
 
-    if($data){
-        header("Location: home.php");
-    }
+
+    // $data=$user->checkUserInfo($_POST["email"],$_POST["pass"]);
+
+    // if($data){
+    //     header("Location: home.php");
+    // }
    
     
 }

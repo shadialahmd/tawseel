@@ -71,7 +71,10 @@ $updatedate= $createdate=$d['mday'] .'-'.  $d['mon'] .'-'. $d['year'] ;//.' ## '
 
 
 if(isset($_POST["submit"])){
-  $op->registerUser($_POST["trade_name"],$_POST["first_name"],$_POST["last_name"],$_POST["email"],$_POST["password"],$_POST["phone"],$_POST["address"],$createdate,$updatedate);
+  $add=$op->registerUser($_POST["trade_name"],$_POST["first_name"],$_POST["last_name"],$_POST["email"],$_POST["password"],$_POST["phone"],$_POST["address"],$createdate,$updatedate);
+  if($add){
+    echo 'addedd';
+  }
 }
 
 
