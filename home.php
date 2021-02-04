@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// //return to login if not logged in
-// if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){
-// 	header('location:index.php');
-// }
+session_start();
+//return to login if not logged in
+if (!isset($_SESSION['ID']) ||(trim ($_SESSION['id']) == '')){
+	header('location:index.php');
+}
 
 include_once('code.php');
 
@@ -12,7 +12,7 @@ include_once('Include/dbconfig.php');
 $batabase=new Database();
 $db=$batabase->getConnection();
 
-$user = new Users($db);
+echo $_SESSION["id"];
 
 //fetch user data
 // $sql = "SELECT * FROM users WHERE id = '".$_SESSION['user']."'";

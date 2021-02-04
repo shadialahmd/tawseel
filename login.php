@@ -102,6 +102,8 @@
 </script>-->
 <?php
 
+session_start();
+
 include_once 'Include/dbconfig.php';
 
 include_once 'code.php';
@@ -113,18 +115,18 @@ $op=new Code($DB);
 
 if(isset($_POST["submit"])){
 
+
    $ss=$op->login($_POST["email"],$_POST["pass"]);
 
-   print_r($ss);
+   $_SESSION["id"]=$ss["ID"]
 
 
-    // $data=$user->checkUserInfo($_POST["email"],$_POST["pass"]);
-
-    // if($data){
-    //     header("Location: home.php");
-    // }
-   
-    
+   ?>
+   <script type="text/javascript">
+alert("Successfull Added.");
+window.location = "home.php";
+</script>
+   <?php
 }
 ?>
 
