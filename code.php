@@ -1,40 +1,25 @@
 <?php
 
 
-class Users{
+class Code{
 
 
     private $conn;
 
     public function __construct($db){
 
-        echo 'ok2';
+     
          $this->conn=$db;
     }
 
 
+    public function registerUser($trade_name,$first_name,$last_name,$email,$phone,$address,$password,$create_date,$update_date){
 
-    public function checkUserInfo($email,$password){
 
-         $sql="SELECT * From users WHERE Email='$email' and Password='$password'";
+        echo $sql="INSERT INTO users(Trade Name,First Name,Last Name,Email,Phone,Address,Password,Create Date,Update Date) values('$trade_name','$first_name','$last_name','$email',$phone,'$address','$password','$create_date','$update_date')";
         $result=mysqli_query($this->conn,$sql);
-        $row=mysqli_fetch_assoc($result);
-        
 
-        if(mysqli_num_rows($result)>0){
-            return $row;
-
-        }
-
-        else {
-            return false;
-        }
-
-        
-    
-    
     }
-
 }
 
 
