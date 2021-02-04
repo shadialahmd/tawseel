@@ -21,23 +21,23 @@
       
         <div class="form-group">
             <label for="name">إسم المستلم</label>
-            <input type="text" class="form-control" name="trade_name" placeholder="أدخل الإسم التجاري" >
+            <input type="text" class="form-control" name="recipient_name" placeholder="أدخل الإسم التجاري" >
           </div>
         <div class="form-group">
             <label for="name">رقم العاتف</label>
-            <input type="text" class="form-control" name="first_name" placeholder="الإسم الأول" >
+            <input type="text" class="form-control" name="phone" placeholder="الإسم الأول" >
           </div>
           <div class="form-group">  
             <label for="mobile">العنوان</label>
-            <input type="text" class="form-control" name="last_name" placeholder="إسم العائلة" >
+            <input type="text" class="form-control" name="address" placeholder="إسم العائلة" >
           </div>
           <div class="form-group">  
             <label for="nmail">المبلغ</label>
-            <input type="text" class="form-control" name="email" placeholder="ادخل البريد الإلكتروني" >
+            <input type="text" class="form-control" name="amount" placeholder="ادخل البريد الإلكتروني" >
           </div>
           <div class="form-group">  
             <label for="nmail">حالة الطلب</label>
-            <input type="text" class="form-control" name="password" placeholder="كلمة المرور" >
+            <input type="text" class="form-control" name="status" placeholder="كلمة المرور" >
           </div>
          
           <div class="form-group">
@@ -51,13 +51,21 @@
 
 <?php
 
-// include_once 'Include/dbconfig.php';
-// include_once 'code.php';
+include_once 'Include/dbconfig.php';
+ include_once 'Include/operation.php';
 
-// $DataBase=new Database();
-// $DB=$DataBase->getConnection();
+$DataBase=new Database();
+$DB=$DataBase->getConnection();
 
-// $op=new Code($DB);
+
+
+  $op=new Operation($DB);
+  if(isset($_POST["submit"])){
+    $op->addOrder($_POST);
+
+  }
+
+
 // $d=getdate();
 // $updatedate= $d['mday'] .'-'.  $d['mon'] .'-'. $d['year'] ;
 // $createdate=$d['mday'] .'-'.  $d['mon'] .'-'. $d['year'] ;//.' ## '. $d['hours'] .':'. $d['minutes'] .':'. $d['seconds'];
