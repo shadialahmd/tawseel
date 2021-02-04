@@ -118,7 +118,11 @@ if(isset($_POST["submit"])){
 
    $ss=$op->login($_POST["email"],$_POST["pass"]);
 
-   $_SESSION["id"]=$ss["ID"]
+  
+   //echo 'ssss';
+   //print_r($ss["ID"]);
+
+   $_SESSION["id"]=$ss["ID"];
 
 
    ?>

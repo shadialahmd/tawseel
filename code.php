@@ -27,7 +27,7 @@ class Code{
     public function login($email,$password){
 
         $pass=md5($password);
-        $sql="SELECT * FROM users WHERE email='$email' and password='$pass'";
+        echo $sql="SELECT * FROM users WHERE email='$email' and password='$pass'";
        
         $result=mysqli_query($this->conn,$sql);
         
