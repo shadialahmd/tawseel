@@ -66,8 +66,8 @@ $DB=$DataBase->getConnection();
 
 $op=new Code($DB);
 $d=getdate();
-$updatedate= $d['mday'] .'-'.  $d['mon'] .'-'. $d['year'] ;
-$createdate=$d['mday'] .'-'.  $d['mon'] .'-'. $d['year'] ;//.' ## '. $d['hours'] .':'. $d['minutes'] .':'. $d['seconds'];
+$updatedate= date("Y-m-d H:i:s") ;
+$createdate=date("Y-m-d H:i:s");
 
 
 if(isset($_POST["submit"])){
