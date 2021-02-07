@@ -15,6 +15,8 @@ $db=$batabase->getConnection();
 
 $op=new Operation($db);
 
+$op->showDrivers();
+
 if(isset($_POST["submit"])){
 $op->addOrder($_POST);
 
@@ -53,6 +55,33 @@ $op->addOrder($_POST);
 		<div class="form-group">  
 		  <label for="nmail">الحالة</label>
 		  <input type="text" class="form-control" name="status" placeholder="كلمة المرور" >
+		</div>
+
+		<div class="form-group">  
+		  <label for="driver10">السائق</label>
+		  <select name="driver10">
+
+
+		  
+
+		  <?php
+		  $list=$op->showDrivers();
+		  
+		  ?>
+
+		
+		
+          </select>
+		</div>
+
+
+
+		<div class="form-group">  
+		  <label for="nmail">السائق</label>
+		  <select name="driver">
+			  <option value="Ali">Ali</option>
+			  <option value="Adam">Adam</option>
+          </select>
 		</div>
 
 	
