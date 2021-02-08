@@ -55,11 +55,14 @@ class Operation{
         $sql="SELECT * FROM orders";
         $result=mysqli_query($this->conn,$sql);
 
-        while($data=mysqli_fetch_assoc($result)){
 
-            print_r($data);
+        $date=array();
+        while($row=mysqli_fetch_assoc($result)){
+
+            $data[]=$row;
 
         }
+        return $data;
     }
 
     public function createInvoice(){
