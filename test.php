@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap Simple Data Table</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<title>Bootstrap All in One Navbar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda+One">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,236 +13,178 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
 body {
-    color: #566787;
-    background: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
+	background: #eeeeee;
 }
-.table-responsive {
-    margin: 30px 0;
+.form-inline {
+	display: inline-block;
 }
-.table-wrapper {
-    min-width: 1000px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+.navbar-header.col {
+	padding: 0 !important;
 }
-.table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
-    min-width: 100%;
+.navbar {		
+	background: #fff;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-bottom: 1px solid #d6d6d6;
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
 }
-.table-title h2 {
-    margin: 8px 0 0;
-    font-size: 22px;
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	color: #555;
+	padding-left: 0;
+	padding-right: 50px;
+	font-family: 'Merienda One', sans-serif;
+}
+.navbar .navbar-brand i {
+	font-size: 20px;
+	margin-right: 5px;
 }
 .search-box {
-    position: relative;        
-    float: right;
-}
+	position: relative;
+}	
 .search-box input {
-    height: 34px;
-    border-radius: 20px;
-    padding-left: 35px;
-    border-color: #ddd;
-    box-shadow: none;
+	box-shadow: none;
+	padding-right: 35px;
+	border-radius: 3px !important;
 }
-.search-box input:focus {
-    border-color: #3FBAE4;
+.search-box .input-group-addon {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 7px;
+	height: 100%;
 }
 .search-box i {
-    color: #a0a5b1;
-    position: absolute;
-    font-size: 19px;
-    top: 8px;
-    left: 10px;
+	color: #a0a5b1;
+	font-size: 19px;
 }
-table.table tr th, table.table tr td {
-    border-color: #e9e9e9;
+.navbar .nav-item i {
+	font-size: 18px;
 }
-table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fcfcfc;
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
 }
-table.table-striped.table-hover tbody tr:hover {
-    background: #f5f5f5;
+.navbar .nav-item.open > a {
+	background: none !important;
 }
-table.table th i {
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
-table.table td:last-child {
-    width: 130px;
+.navbar .dropdown-menu a {
+	color: #777;
+	padding: 8px 20px;
+	line-height: normal;
 }
-table.table td a {
-    color: #a0a5b1;
-    display: inline-block;
-    margin: 0 5px;
-}
-table.table td a.view {
-    color: #03A9F4;
-}
-table.table td a.edit {
-    color: #FFC107;
-}
-table.table td a.delete {
-    color: #E34724;
-}
-table.table td i {
-    font-size: 19px;
-}    
-.pagination {
-    float: right;
-    margin: 0 0 5px;
-}
-.pagination li a {
-    border: none;
-    font-size: 95%;
-    width: 30px;
-    height: 30px;
-    color: #999;
-    margin: 0 2px;
-    line-height: 30px;
-    border-radius: 30px !important;
-    text-align: center;
-    padding: 0;
-}
-.pagination li a:hover {
-    color: #666;
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:active {
+	color: #333;
 }	
-.pagination li.active a {
-    background: #03A9F4;
+.navbar .dropdown-item .material-icons {
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
 }
-.pagination li.active a:hover {        
-    background: #0397d6;
+.navbar .badge {
+	color: #fff;
+	background: #f44336;
+	font-size: 11px;
+	border-radius: 20px;
+	position: absolute;
+	min-width: 10px;
+	padding: 4px 6px 0;
+	min-height: 18px;
+	top: 5px;
 }
-.pagination li.disabled i {
-    color: #ccc;
+.navbar a.notifications, .navbar a.messages {
+	position: relative;
+	margin-right: 10px;
 }
-.pagination li i {
-    font-size: 16px;
-    padding-top: 6px
+.navbar a.messages {
+	margin-right: 20px;
 }
-.hint-text {
-    float: left;
-    margin-top: 6px;
-    font-size: 95%;
-}    
+.navbar a.notifications .badge {
+	margin-left: -8px;
+}
+.navbar a.messages .badge {
+	margin-left: -4px;
+}	
+.navbar .active a, .navbar .active a:hover, .navbar .active a:focus {
+	background: transparent !important;
+}
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 300px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 1199px){
+	.form-inline {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.input-group {
+		width: 100%;
+	}
+}
 </style>
-<script>
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-});
-</script>
-</head>
+</head> 
 <body>
-<div class="container-xl">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8"><h2>Customer <b>Details</b></h2></div>
-                    <div class="col-sm-4">
-                        <div class="search-box">
-                            <i class="material-icons">&#xE8B6;</i>
-                            <input type="text" class="form-control" placeholder="Search&hellip;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name <i class="fa fa-sort"></i></th>
-                        <th>Address</th>
-                        <th>City <i class="fa fa-sort"></i></th>
-                        <th>Pin Code</th>
-                        <th>Country <i class="fa fa-sort"></i></th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Thomas Hardy</td>
-                        <td>89 Chiaroscuro Rd.</td>
-                        <td>Portland</td>
-                        <td>97219</td>
-                        <td>USA</td>
-                        <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Maria Anders</td>
-                        <td>Obere Str. 57</td>
-                        <td>Berlin</td>
-                        <td>12209</td>
-                        <td>Germany</td>
-                        <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Fran Wilson</td>
-                        <td>C/ Araquil, 67</td>
-                        <td>Madrid</td>
-                        <td>28023</td>
-                        <td>Spain</td>
-                        <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Dominique Perrier</td>
-                        <td>25, rue Lauriston</td>
-                        <td>Paris</td>
-                        <td>75016</td>
-                        <td>France</td>
-                        <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Martin Blank</td>
-                        <td>Via Monte Bianco 34</td>
-                        <td>Turin</td>
-                        <td>10100</td>
-                        <td>Italy</td>
-                        <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>        
-                </tbody>
-            </table>
-            <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>  
-</div>   
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+	<a href="#" class="navbar-brand"><i class="fa fa-cube"></i>Brand<b>Name</b></a>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<div class="navbar-nav">
+			<a href="#" class="nav-item nav-link active">Home</a>
+			<a href="#" class="nav-item nav-link">About</a>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+				<div class="dropdown-menu">
+					<a href="#" class="dropdown-item">Web Design</a>
+					<a href="#" class="dropdown-item">Web Development</a>
+					<a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+				</div>
+			</div>
+			<a href="#" class="nav-item nav-link">Blog</a>
+			<a href="#" class="nav-item nav-link">Contact</a>
+		</div>
+		<form class="navbar-form form-inline">
+			<div class="input-group search-box">								
+				<input type="text" id="search" class="form-control" placeholder="Search by Name">
+				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+			</div>
+		</form>
+		<div class="navbar-nav ml-auto">
+			<a href="#" class="nav-item nav-link notifications"><i class="fa fa-bell-o"></i><span class="badge">1</span></a>
+			<a href="#" class="nav-item nav-link messages"><i class="fa fa-envelope-o"></i><span class="badge">10</span></a></a>
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/examples/images/avatar/2.jpg" class="avatar" alt="Avatar"> Paula Wilson <b class="caret"></b></a>
+				<div class="dropdown-menu">
+					<a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
+					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
+					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></a>
+					<div class="dropdown-divider"></div>
+					<a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
 </body>
-</html>
+</html>                            
