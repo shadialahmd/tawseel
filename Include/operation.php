@@ -48,6 +48,20 @@ class Operation{
         //return $data;
     }
 
+
+
+    public function showOrders(){
+
+        $sql="SELECT * FROM orders";
+        $result=mysqli_query($this->conn,$sql);
+
+        while($data=mysqli_fetch_assoc($result)){
+
+            print_r($data);
+
+        }
+    }
+
     public function createInvoice(){
         $pdf = new FPDF();
         $pdf->AddPage();
