@@ -17,7 +17,8 @@ class Operation{
 
     public function addOrder($data){
 
-         $sql="INSERT INTO orders (Recipient_Name,Phone,Address,Amount,Status,Assign_to) VALUES('$data[recipient_name]','$data[phone]','$data[address]',$data[amount],'$data[status]','$data[driver10]')";
+         $sql="INSERT INTO orders (Recipient_Name,Phone,Address,Amount,Status,Assign_to)
+         VALUES('$data[recipient_name]','$data[phone]','$data[address]',$data[amount],'$data[status]','$data[driver10]')";
          $result=mysqli_query($this->conn,$sql);
         
          // $this->createInvoice();
