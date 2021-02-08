@@ -13,7 +13,21 @@ class Operation{
 
     }
 
+    public function login($email,$password){
 
+        $pass=md5($password);
+         $sql="SELECT * FROM users WHERE email='$email' and password='$pass'";
+       
+        $result=mysqli_query($this->conn,$sql);
+        
+        $data=mysqli_fetch_assoc($result);
+        return $data;
+
+
+    }
+
+
+    
 
     public function addOrder($data){
 

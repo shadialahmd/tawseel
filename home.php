@@ -1,10 +1,14 @@
 <?php
 session_start();
+include_once 'header.php';
 //return to login if not logged in
 
-if (!isset($_SESSION['id']) ||(trim ($_SESSION['id']) == '')){
-	header('location:index.php');
-}
+// if (!isset($_SESSION['id']) ||(trim ($_SESSION['id']) == '')){
+// 	header('location:index.php');
+// }
+
+//print_r($_SESSION["data"]);
+// echo $_SESSION["id"];
 
 include_once('Include/operation.php');
 
@@ -27,7 +31,7 @@ $op->addOrder($_POST);
 <html>
 <head>
 	<title>تسجيل طلب توصيل جديد</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 <div class="container">
