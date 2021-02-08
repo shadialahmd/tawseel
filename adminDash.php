@@ -45,7 +45,7 @@
                         $op=new Operation($db);
                        
                            $d=$op->showOrders();
-                           print_r($d);
+                          // print_r($d);
 
                    ?>
                             <table class='table table-bordered table-striped'>
@@ -59,33 +59,25 @@
                                    </tr>
                                </thead>
                                <tbody>
-<?php
+                                <?php
                                 foreach($d as $row){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['ID'] . "</td>";
-                                        echo "<td>" . $row['Recipient_Name'] . "</td>";
-                                        echo "<td>" . $row['Phone'] . "</td>";
-                                        echo "<td>" . $row['Amount'] . "</td>";
-                                        echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
-                                    echo "</tr>";
+                                    ?>
+                                    <tr>
+                                       <td><?php echo $row['ID']?></td>
+                                       <td><?php echo $row['Recipient_Name'] ?></td>
+                                       <td><?php echo $row['Phone'] ?></td>
+                                       <td><?php echo $row['Amount'] ?></td>
+                                       <td>
+                                       <a href='read.php?id=<?php echo $row["ID"]?>' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
+                                       <a href='update.php?id=<?php  echo $row["ID"] ?>' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
+                                       <a href='delete.php?id=<?php echo $row["ID"] ?>' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>
+                                       </td>
+                                       </tr>
+                                    <?php
                                 }
                                 echo "</tbody>";                            
                             echo "</table>";
-                    //         // Free result set
-                    //         mysqli_free_result($result);
-                    //     } else{
-                    //         echo "<p class='lead'><em>No records were found.</em></p>";
-                    //     }
-                    // } else{
-                    //     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                    // }
  
-                    // // Close connection
-                    // mysqli_close($link);
                     ?>
                 </div>
             </div>        
