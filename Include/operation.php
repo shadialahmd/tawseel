@@ -31,21 +31,22 @@ class Operation{
 
         //$data=mysqli_fetch_all($result,MYSQLI_ASSOC);
         
+        // first way    
+        // while($data = mysqli_fetch_array($result))
+        // {
+        //     echo "<option value='". $data['ID'] ."'>" .$data['Name'] ."</option>";  // displaying data in option menu
+        // }
 
-        while($data = mysqli_fetch_array($result))
-        {
-            echo "<option value='". $data['ID'] ."'>" .$data['Name'] ."</option>";  // displaying data in option menu
+        //second way
+        $data= array();
+        while($row=mysqli_fetch_assoc($result)){
+            $data[]=$row;
+
         }
 
-    //  print_r($data);
-    //  echo "<br/>";
-    //  print_r($data[0]);
-    //  echo "<br/>";
-    //  print_r($data[1]);
-    //  echo "<br/>";
-    //  print_r($data[1]["ID"]);
-     
-        //return $data;
+        return $data;
+
+
     }
 
 

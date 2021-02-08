@@ -66,6 +66,14 @@ $op->addOrder($_POST);
 
 		  <?php
 		  $list=$op->showDrivers();
+
+		  foreach($list as $l){
+
+			?>
+			<option value='<?php echo $l["ID"]?>'><?php echo $l["Name"]?></option>
+			<?php
+		  }
+		 
 		  
 		  ?>
 
