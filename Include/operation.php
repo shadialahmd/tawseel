@@ -66,6 +66,15 @@ class Operation{
         return $data;
     }
 
+    public function showOneOrder($id){
+
+            $sql="SELECT  *  FROM orders WHERE ID=$id";
+            $result=mysqli_query($this->conn,$sql);
+            $data=mysqli_fetch_assoc($result);
+            return $data;
+
+    }
+
     public function createInvoice(){
         $pdf = new FPDF();
         $pdf->AddPage();
