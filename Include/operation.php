@@ -40,7 +40,7 @@ class Operation{
     }
 
     public function showDrivers(){
-        $sql="SELECT * FROM driver";
+        $sql="SELECT * FROM driver WHERE Status='Active'";
         $result=mysqli_query($this->conn,$sql);
 
         //$data=mysqli_fetch_all($result,MYSQLI_ASSOC);
