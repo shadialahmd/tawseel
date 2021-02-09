@@ -39,6 +39,8 @@ class Operation{
 
     }
 
+
+    // Drivers
     public function showDrivers(){
         $sql="SELECT * FROM driver WHERE Status='Active'";
         $result=mysqli_query($this->conn,$sql);
@@ -61,6 +63,19 @@ class Operation{
         return $data;
 
 
+    }
+    public function showAllDrivers(){
+        $sql="SELECT * FROM driver";
+        $result=mysqli_query($this->conn,$sql);
+
+        $date=array();
+
+        while($row=mysqli_fetch_assoc($result)){
+
+            $data[]=$row;
+        }
+
+        return $data;
     }
 
 
