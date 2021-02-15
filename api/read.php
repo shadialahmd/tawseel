@@ -17,7 +17,7 @@ class Read{
 
         $sql="select * from driver";
         $result=mysqli_query($this->conn,$sql);
-
+        
 
 
 
@@ -34,6 +34,20 @@ class Read{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $database=new Database();
 
 $db=$database->getConnection();

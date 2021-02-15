@@ -43,7 +43,13 @@
 
 header("Content-type:application/json");
 
-$url="192.168.1.38/tawseel/api/read.php";
+$s=json_decode(file_get_contents('https://swapi.dev/api/people/'));
+
+print_r($s);
+
+die();
+
+$url="https://swapi.dev/api/people/1/";//"192.168.1.38/tawseel/api/read.php";
 
 $curl=curl_init();
 
@@ -53,7 +59,7 @@ curl_setopt($curl,CURLOPT_URL,$url);
 //print json
 $result=curl_exec($curl);
 
-echo $result;
+//echo $result;
 
 //print array or object
 $arr=json_decode($result,true);
