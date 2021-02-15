@@ -14,7 +14,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap All in One Navbar</title>
+<title>أول موقع توصيل طلبات في فلسطين</title>
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda+One">
@@ -28,17 +28,22 @@
 </head> 
 <body>
 <nav class="navbar navbar-expand-xl navbar-light bg-light">
-	<a href="#" class="navbar-brand"><i class="fa fa-cube"></i>Brand<b>Name</b></a>
+	<a href="#" class="navbar-brand"><i class="fa fa-cube"></i> توصيل <b>فرحان </b></a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav">
-			<a href="#" class="nav-item nav-link active">الرئيسية</a>
+			<a href="home.php" class="nav-item nav-link active">الرئيسية</a>
+			<?php 
+				if(isset($_SESSION["data"]["Trade_Name"])){
+			?>
 			<a href="#" class="nav-item nav-link">الطلبات</a>
-			<a href="#" class="nav-link nav-link" >المناديب</a>
-		
+			<a href="drivers.php" class="nav-link nav-link" >المناديب</a>
+		   <?php 
+				}  
+		   ?>
 		</div>
 
 		<?php 

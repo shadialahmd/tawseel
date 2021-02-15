@@ -3,7 +3,7 @@
 session_start();
 include_once 'header.php';
 ?>
-
+<!-- 
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -42,8 +42,7 @@ include_once 'header.php';
             <button type="submit" name="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
         </div>
         <div class="clearfix">
-            <!-- <label class="float-left form-check-label"><input type="checkbox"> Remember me</label> -->
-            <!-- <a href="#" class="float-right">Forgot Password?</a> -->
+
         </div>
 		<div class="or-seperator"><i>or</i></div>
     <p class="text-center text-muted small">Don't have an account? <a href="signup.php">Sign up here!</a></p>
@@ -57,26 +56,26 @@ include_once 'header.php';
 <?php
 
 
-include_once 'Include/dbconfig.php';
+// include_once 'Include/dbconfig.php';
 
-include_once 'Include/operation.php';
-$DataBase=new Database();
-$DB=$DataBase->getConnection();
+// include_once 'Include/operation.php';
+// $DataBase=new Database();
+// $DB=$DataBase->getConnection();
 
-$op=new Operation($DB);
+// $op=new Operation($DB);
 
-//$userData=array();
+// //$userData=array();
 
-if(isset($_POST["submit"])){
+// if(isset($_POST["submit"])){
 
 
-   $login=$op->login($_POST["email"],$_POST["pass"]);
+//    $login=$op->login($_POST["email"],$_POST["pass"]);
 
-  // $userData[]=$login;
-//    print_r($login);
-//    die;
+//   // $userData[]=$login;
+// //    print_r($login);
+// //    die;
 
-   $_SESSION["data"]=$login;
+//    $_SESSION["data"]=$login;
 
 
    ?>
@@ -85,6 +84,6 @@ alert("Successfull Login.");
 window.location = "home.php";
 </script>
    <?php
-}
+//}
 ?>
-
+ -->
