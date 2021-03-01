@@ -1,6 +1,9 @@
-
-
 <?php
+
+
+echo "sss";
+
+$file=fopen("log.txt","w") or die("Error !!");
 
 // $someArray = [
 //   [
@@ -41,30 +44,30 @@
 // print_r($someArray3[0]->name); 
 
 
-header("Content-type:application/json");
+// header("Content-type:application/json");
 
-$s=json_decode(file_get_contents('https://swapi.dev/api/people/'));
+// $s=json_decode(file_get_contents('https://swapi.dev/api/people/'));
 
-print_r($s);
+// print_r($s);
 
-die();
+// die();
 
-$url="https://swapi.dev/api/people/1/";//"192.168.1.38/tawseel/api/read.php";
+// $url="https://swapi.dev/api/people/1/";//"192.168.1.38/tawseel/api/read.php";
 
-$curl=curl_init();
+// $curl=curl_init();
 
-curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
-curl_setopt($curl,CURLOPT_URL,$url);
+// curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+// curl_setopt($curl,CURLOPT_URL,$url);
 
-//print json
-$result=curl_exec($curl);
+// //print json
+// $result=curl_exec($curl);
 
-//echo $result;
+// //echo $result;
 
-//print array or object
-$arr=json_decode($result,true);
+// //print array or object
+// $arr=json_decode($result,true);
 
-print_r($arr);
+// print_r($arr);
 
 
 

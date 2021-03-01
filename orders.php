@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -93,7 +92,7 @@ include_once 'header.php';
               <div class="card-header bg-white border-0">
                 <div class="row align-items-center">
                   <div class="col-8">
-                    <h3 class="mb-0">Drivers</h3>
+                    <h3 class="mb-0">Orders</h3>
                   </div>
                   <div class="col-4 text-right">
                     <a href="create.php" class="btn btn-sm btn-primary">Add</a>
@@ -114,36 +113,51 @@ $db=$batabase->getConnection();
 
 $op=new Operation($db);
 
-
+//    $d=$op->showOrders();
 
 if(isset($_POST['submit'])){
     
    
-    $dd=$op->searchDrivers($_POST['rname']);
+    $dd=$op->showOneOrder($_POST['rname']);
    
     print_r($dd);
 
     $xx= sizeof($dd);
+    // var_dump($xx);
+    // echo 'sizeof = '. sizeof($dd);
+    
 
+    // /echo $dd[];
+
+
+    //else{
         ?>
         <table class='table table-bordered table-striped'>
          <thead>
               <tr>
-              <th style="width: 6%">#</th>
-             <th style="width: 25%">Name</th>
-             <th style="width: 25%">Phone</th>
+                 <th style="width: 6%">#</th>
+                 <th style="width: 25%">Recipient Name</th>
+                 <th style="width: 25%">Phone</th>
+                 <th style="width: 25%">Address</th>
+                 <th style="width: 25%">Amount</th>
+                 <th style="width: 25%">Status</th>
+                 <th style="width: 25%">Assign to</th>
                
                  <th >Action</th>
                </tr>
            </thead>
            <tbody>
             <?php
-               foreach($dd as $row){
+            foreach($dd as $row){
                 ?>
                 <tr>
                    <td><?php echo $row['ID']?></td>
-                   <td><?php echo $row['Name'] ?></td>
+                   <td><?php echo $row['Recipient_Name'] ?></td>
                    <td><?php echo $row['Phone'] ?></td>
+                   <td><?php echo $row['Address'] ?></td>
+                   <td><?php echo $row['Amount'] ?></td>
+                   <td><?php echo $row['Status'] ?></td>
+                   <td><?php echo $row['Assign_to'] ?></td>
                    <td>
                    <a href='read.php?id=<?php echo $row["ID"]?>' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
                    <a href='update.php?id=<?php  echo $row["ID"] ?>' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
@@ -155,14 +169,17 @@ if(isset($_POST['submit'])){
             echo "</tbody>";                            
         echo "</table>";
 
+   // }
+
+
  
 
 }
 
    else{
        
-   $d=$op->showAllDrivers();
-
+   $d=$op->showOrders();
+  // print_r($d);
    
 
 ?>
@@ -170,9 +187,12 @@ if(isset($_POST['submit'])){
      <thead>
           <tr>
              <th style="width: 6%">#</th>
-             <th style="width: 25%">Name</th>
+             <th style="width: 25%">Recipient Name</th>
              <th style="width: 25%">Phone</th>
-
+             <th style="width: 25%">Address</th>
+             <th style="width: 25%">Amount</th>
+             <th style="width: 25%">Status</th>
+             <th style="width: 25%">Assign to</th>
            
              <th >Action</th>
            </tr>
@@ -183,9 +203,12 @@ if(isset($_POST['submit'])){
             ?>
             <tr>
                <td><?php echo $row['ID']?></td>
-               <td><?php echo $row['Name'] ?></td>
+               <td><?php echo $row['Recipient_Name'] ?></td>
                <td><?php echo $row['Phone'] ?></td>
-    
+               <td><?php echo $row['Address'] ?></td>
+               <td><?php echo $row['Amount'] ?></td>
+               <td><?php echo $row['Status'] ?></td>
+               <td><?php echo $row['Assign_to'] ?></td>
                <td>
                <a href='read.php?id=<?php echo $row["ID"]?>' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
                <a href='update.php?id=<?php  echo $row["ID"] ?>' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>

@@ -39,7 +39,7 @@
 			<?php 
 				if(isset($_SESSION["data"]["Trade_Name"])){
 			?>
-			<a href="#" class="nav-item nav-link">الطلبات</a>
+			<a href="orders.php" class="nav-item nav-link">الطلبات</a>
 			<a href="drivers.php" class="nav-link nav-link" >المناديب</a>
 		   <?php 
 				}  
