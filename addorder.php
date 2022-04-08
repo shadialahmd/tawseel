@@ -61,7 +61,7 @@ $DB=$DataBase->getConnection();
 
   $op=new Operation($DB);
   if(isset($_POST["submit"])){
-    $op->addOrder($_POST);
+  $op->addOrder($_POST);
 
   }
 
